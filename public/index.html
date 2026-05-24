@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Scraper</title>
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">WS</span>
+      <h1>Website Scraper</h1>
+    </div>
+    <span class="badge">DeepSeek + Playwright</span>
+  </header>
+
+  <main>
+    <section class="card upload-card">
+      <h2>Upload File</h2>
+      <p class="hint">CSV or Excel with a <code>Website</code> column. Extra columns are preserved.</p>
+      <form id="upload-form">
+        <label class="dropzone" id="drop">
+          <input type="file" id="file" accept=".csv,.xlsx,.xls" hidden />
+          <span id="drop-text">Drop file here or <strong>browse</strong></span>
+        </label>
+        <div id="upload-error" class="error-banner"></div>
+        <button type="submit" class="btn primary" id="submit-btn" disabled>Start Job</button>
+      </form>
+    </section>
+
+    <section class="card jobs-card">
+      <div class="row-between">
+        <h2>Jobs</h2>
+        <div class="modal-actions">
+          <button class="btn ghost" id="refresh-btn">Refresh</button>
+          <button class="btn danger" id="delete-all-btn">Delete All</button>
+        </div>
+      </div>
+      <div id="jobs" class="jobs"></div>
+    </section>
+  </main>
+
+  <div id="logs-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <span id="logs-title">Logs</span>
+        <div class="modal-actions">
+          <button class="btn ghost sm" id="logs-copy">Copy</button>
+          <button class="btn ghost sm" id="logs-close">Close</button>
+        </div>
+      </div>
+      <pre id="logs-body" class="logs-body"></pre>
+    </div>
+  </div>
+
+  <script src="api.js?v=3"></script>
+  <script src="ui.js?v=3"></script>
+  <script src="logs.js?v=3"></script>
+  <script src="upload.js?v=3"></script>
+  <script src="jobs.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
