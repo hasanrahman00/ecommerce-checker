@@ -2,8 +2,6 @@
 node_modules/
 
 # Secrets & local config (contains API key + proxy password)
-.env
-.env.local
 
 # Runtime data — ignore everything in these dirs except the .gitkeep placeholder
 jobs/*
